@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('parcels', 'ParcelsController');
+//Route::get('pickup', 'ParcelsController@pickup');
+Route::post('parcels/pickup', 'ParcelsController@pickup')->name('parcels.pickup');//This is how we define a new route
+//onclick="pickup();"
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
