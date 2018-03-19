@@ -25,7 +25,7 @@ class ParcelsController extends Controller
      */
     public function create()
     {
-        //
+        return view('parcels.create');
     }
 
     /**
@@ -36,7 +36,25 @@ class ParcelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        // if(Auth::check()){
+            $parcel =Parcel::create([
+                'item'=>$request->input('item'),
+                'pickup_address'=>$request->input('pickup_address'),
+                'pickup_state'=>$request->input('pickup_state'),
+                'delivery_address'=>$request->input('delivery_address'),
+                'delivery_state'=>$request->input('delivery_state'),               
+                'status'=>'available',               
+            ]);
+
+            if($parcel){
+                return redirect()->route('parcels.show', ['parcel'=>$parcel->id])
+                ->with('success', 'Parcel added successfully');
+            }
+        // }
+        // else
+            return('error');
+            //return back()->withInput()->with('error', 'Error saving data');//Not working
     }
 
     /**

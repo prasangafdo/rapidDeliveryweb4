@@ -43,7 +43,7 @@
                     <td>{{$parcel->pickup_address." ".$parcel->pickup_state}}</td>
                     <td>{{$parcel->parcelUser->receiver_id}}</td>
                     <td>{{$parcel->delivery_address." ".$parcel->delivery_state}}</td>
-                    <td>{{"Will be added later"}}</td>
+                    <td>{{$parcel->status}}</td>
                     
                 </tr>
 
