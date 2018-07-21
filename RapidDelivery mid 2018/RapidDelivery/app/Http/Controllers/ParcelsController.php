@@ -65,9 +65,11 @@ class ParcelsController extends Controller
      */
     public function show(Parcel $parcel)
     {
-        //
-         $dd= Parcel::find($parcel->id);//Check the migration
+        $dd= Parcel::find($parcel->id);//Check the migration
+       //return view('userparcels.show', ['parcel'=>$dd]);
+       //  print($dd);
         return view('parcels.show', ['parcel'=>$dd]);
+
     }
 
     /**
