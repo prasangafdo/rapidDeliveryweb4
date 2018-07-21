@@ -15,6 +15,11 @@ class CreateSendersTable extends Migration
     {
         Schema::create('senders', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('sendr_address');
+            $table->integer('contact'); 
             $table->timestamps();
         });
     }
