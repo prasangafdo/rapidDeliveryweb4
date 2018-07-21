@@ -126,10 +126,14 @@ class ParcelsController extends Controller
                                 'status'=>'picked_up'
                             ]);
         if($pickup){
-            return redirect()->route('parcels.index')
+            return redirect()->route('courierparcels.index')
             ->with('success', 'User updated successfully');//Return message *not working.
         }                        
         return back()->withInput();
 
+    }
+    public function location(Request $request)
+    {
+        return view('parcels.location');
     }
 }
