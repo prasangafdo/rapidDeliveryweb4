@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Parcel;
+use App\SenderParcel;
 use Illuminate\Http\Request;
 
 class ParcelsController extends Controller
@@ -25,7 +26,10 @@ class ParcelsController extends Controller
      */
     public function create()
     {
-        return view('parcels.create');
+        $sender = SenderParcel::all()->unique('sender_id');//To get the distinct value. (Remove repetitions).
+       return view('parcels.create', ['senders'=>$sender]);
+        //print($sender);
+
     }
 
     /**
@@ -37,7 +41,7 @@ class ParcelsController extends Controller
     public function store(Request $request)
     {
         //dd($request);
-        // if(Auth::check()){
+      //  if(Auth::check()){
             $parcel =Parcel::create([
                 'item'=>$request->input('item'),
                 'pickup_address'=>$request->input('pickup_address'),
@@ -47,13 +51,18 @@ class ParcelsController extends Controller
                 'status'=>'available',               
             ]);
 
-            if($parcel){
+            $parcel_sender =SenderParcel::create([
+                'sender_id'=>$request->input('sender_id'),//Change later
+                'parcel_id'=>$parcel->id,             
+            ]);
+
+            if($parcel_sender){
                 return redirect()->route('parcels.show', ['parcel'=>$parcel->id])
                 ->with('success', 'Parcel added successfully');
-            }
-        // }
+           // }
+         }
         // else
-            return('error');
+         //   return('error');
             //return back()->withInput()->with('error', 'Error saving data');//Not working
     }
 
@@ -117,10 +126,14 @@ class ParcelsController extends Controller
                                 'status'=>'picked_up'
                             ]);
         if($pickup){
-            return redirect()->route('parcels.index')
+            return redirect()->route('courierparcels.index')
             ->with('success', 'User updated successfully');//Return message *not working.
         }                        
         return back()->withInput();
 
+    }
+    public function location(Request $request)
+    {
+        return view('parcels.location');
     }
 }

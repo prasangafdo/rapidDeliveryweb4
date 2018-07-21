@@ -1,3 +1,10 @@
 # rapidDeliveryweb4
-Rapid Delivery Web Early 2018 edit.
-Extrat the .rar file and replace it with the files in the folder.
+Rapid Delivery Web Mid 2018 
+Version 2.0.4.0.1
+(Receiver's features will not be included in this version. Will be added later.)
+
+How to use
+==========
+1. Extrat the Mid 2018.rar file. 
+2. Replace it with files in the folder.
+

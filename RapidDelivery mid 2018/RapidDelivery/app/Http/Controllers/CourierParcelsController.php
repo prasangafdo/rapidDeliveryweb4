@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Parcel;
 use App\CourierParcel;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class CourierParcelsController extends Controller
      */
     public function index()
     {
-        print("This is courierparcels controller");
+        $parceels = Parcel::all();
+       return view('courierparcels.index' , ['parcels'=>$parceels]);
     }
 
     /**

@@ -75,7 +75,7 @@
   			@endforeach
     </tbody>
   </table>
-
+ <a class="btn btn-lg btn-primary col-sm-offset-3" href="/parcels/create">Add a Parcel</a>
 </div>
 
 <script type="text/javascript">
