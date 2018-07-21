@@ -65,7 +65,23 @@
                     name="delivery_state" 
                     class="form-control"
                     placeholder="delivery_state"/>
-            </div>   
+            </div>  
+            <div class="form-group">
+              <label for="sender_id">Sender ID</label>
+                  <select class="form-control" 
+                    required
+                    id="sender_id"
+                    name="sender_id" 
+                    class="form-control"
+                    placeholder="sender_id">
+
+                         @foreach ($senders as $sender) 
+                         <option>{{$sender->sender_id}}</option>
+                         @endforeach
+
+                  </select>
+                 
+            </div>  
 
             <button type="submit" class="btn btn-primary col-md-offset-4 col-md-4">Submit</button>
           </form>

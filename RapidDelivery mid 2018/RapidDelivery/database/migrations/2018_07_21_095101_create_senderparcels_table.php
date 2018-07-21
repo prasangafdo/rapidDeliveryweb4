@@ -18,7 +18,7 @@ class CreateSenderparcelsTable extends Migration
             $table->string('sender_id');
             $table->string('parcel_id');
             $table->timestamps();
-        });
+        });//Edit this and replace with sender_parcels
     }
 
     /**
