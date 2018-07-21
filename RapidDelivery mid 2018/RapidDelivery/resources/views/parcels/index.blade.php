@@ -55,15 +55,15 @@
     <tbody>
   			@foreach($parcels as $parcel)
 	       <tr>
-	       		<td id="paid_date" name="paid_date"><a href="{{$parcel->id}}">{{$parcel->item}}</a></td>
+	       		<td id="paid_date" name="paid_date"><a href="parcels/{{$parcel->id}}">{{$parcel->item}}</a></td>
 	       		<td>{{$parcel->pickup_state}}</td>
 		        <td>{{$parcel->delivery_state}}</td>
 		        <td>
-		        	<form action="{{ route('parcels.pickup')}}" method="post">
+		        	{{--<form action="{{ route('parcels.pickup')}}" method="post">
 		        	  <input type="hidden" name="parcel_id" id="parcel_id" value="{{$parcel->id}}">
  					<button type="submit" class="btn btn-primary">Add to vehicle</button>
 		        	 		{{csrf_field() }}
-  					</form>
+  					</form>--}}
 		
 		</td>
 	      </tr>
