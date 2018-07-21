@@ -20,6 +20,7 @@ Route::resource('receiverparcels', 'ReceiverParcelsController');
 Route::resource('parcels', 'ParcelsController');
 
 Route::resource('couriers', 'CouriersController');
+Route::resource('senders', 'SendersController');
 
 //Route::get('pickup', 'ParcelsController@pickup');
 //Route::post('parcels/pickup', 'ParcelsController@pickup')->name('parcels.pickup');//This is how we define a new route
