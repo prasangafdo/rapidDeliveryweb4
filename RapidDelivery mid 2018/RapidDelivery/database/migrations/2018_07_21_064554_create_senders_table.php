@@ -18,7 +18,8 @@ class CreateSendersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('sendr_address');
+            $table->string('sender_address');
+            $table->string('sender_state');
             $table->integer('contact'); 
             $table->timestamps();
         });

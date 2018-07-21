@@ -13,49 +13,49 @@
 
       <div class="jumbotron">
 
-      <h1 class="text-danger">{{$parcel->item}}</h1>
+      <h1 class="text-danger">{{$sender->name}}</h1>
 
       </div>
 
       <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading">Student Details</div>
+      <div class="panel-heading">Sender Details</div>
       <div class="panel-body">
         <p>This table shows the details of each and every user</p>
       </div>
     
       <!-- Table -->
         <div class=" col-lg-8 col-lg-offset-2">
-            <table class="table">
-                <tr>
-                    <th>Item</th>
-                    <th>Sender Name (id for now)</th>
-                    <th>Pickup Address</th>
-                    <th>Receiver Name (id for now)</th>
-                    <th>Delivery Address</th>
-                    <th>Parcel status</th> 
-                </tr>
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Sender's Name</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                   
+                     <tr>
+                        <td>{{$sender->name}}</td>
+                        <td>{{$sender->contact}}</td>
+                        <td>{{$sender->email}}</td>
+                        <td>{{$sender->sender_address}}, {{$sender->sender_state}}</td>
+                        <td>
+                        </td>
+                    </tr>
 
-                <tr>
-                  
-                    <td>{{$parcel->item}}</td>
-                    <td>{{$parcel->parcelUser->sender_id}}</td>
-                    <td>{{$parcel->pickup_address." ".$parcel->pickup_state}}</td>
-                    <td>{{$parcel->parcelUser->receiver_id}}</td>
-                    <td>{{$parcel->delivery_address." ".$parcel->delivery_state}}</td>
-                    <td>{{$parcel->status}}</td>
-                    
-                </tr>
-
-                <!--<th>- Table heading-->
-                <!--<th>- Table data-->
-            </table>
+                </tbody>
+              </table>
         </div>
   </div>
 
   <h1 class="col-lg-10" id="about">About</h1><!--Move this to the welcome blade-->
   <p></p>
 <!--End about-->
+
+
 </div>
 
 <div class ="col-lg-2 col-md-2 pull-right">
@@ -69,7 +69,7 @@
     <ol class="list-unstyled"><!--No need to add a user in the show.blade-->
       <li><a href="/users/create">Add a user</a></li>
       <li><a href="/students/create">Add a student</a></li>
-      <li><a href="/students/{{$parcel->id}}/edit">Edit</a></li>
+      <li><a href="/students/{{$sender->id}}/edit">Edit</a></li>
       <li><a href="/students">View all students</a></li>
 
 <!--Delete code copied from "daveozoalor's github"-->
@@ -92,7 +92,7 @@
       {{--  <!--Improved code with a function-->  --}}
       <a href="#" onclick="getDelete()"> Delete</a>
 
-      <form id="delete-form" action="{{ route('parcels.destroy',[$parcel]) }}" 
+      <form id="delete-form" action="{{ route('senders.destroy',[$sender]) }}" {{--edit later--}}
         method="POST" style="display: none;"> <!--Link to the delete action in the controller-->
                 <input type="hidden" name="_method" value="delete">
                 {{ csrf_field() }}
@@ -131,7 +131,7 @@
 
     <script type="text/javascript">
       function getDelete(){//onclick to delete the data
-     var result = confirm('Are you sure you wish to delete user: {{$parcel}}');//Alert Dialog message
+     var result = confirm('Are you sure you wish to delete user: {{$sender}}');//Alert Dialog message
                           if( result ){//If the user clicks on the delete button (onClick())
                                   event.preventDefault();
                                   document.getElementById('delete-form').submit();
@@ -139,6 +139,7 @@
                               
     }
     </script>
+
 
 
 
