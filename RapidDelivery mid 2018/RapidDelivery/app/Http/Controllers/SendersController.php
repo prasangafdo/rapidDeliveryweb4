@@ -14,7 +14,9 @@ class SendersController extends Controller
      */
     public function index()
     {
-        print("Sender. But neet to add views");
+        //print("Sender. But neet to add views");
+        $sender =Sender::all();
+        return view('senders.index', ['senders'=>$sender]);
     }
 
     /**
@@ -46,7 +48,8 @@ class SendersController extends Controller
      */
     public function show(Sender $sender)
     {
-        //
+        $dd= Sender::find($sender->id);//Check the migration
+        return view('senders.show', ['sender'=>$dd]);
     }
 
     /**
