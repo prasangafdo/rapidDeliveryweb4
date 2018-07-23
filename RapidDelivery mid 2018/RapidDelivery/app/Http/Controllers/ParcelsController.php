@@ -132,8 +132,5 @@ class ParcelsController extends Controller
         return back()->withInput();
 
     }
-    public function location(Request $request)
-    {
-        return view('parcels.location');
-    }
+
 }
