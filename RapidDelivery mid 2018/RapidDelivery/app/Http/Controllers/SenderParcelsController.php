@@ -127,12 +127,11 @@ class SenderParcelsController extends Controller
      // $loc = Location::where('id', $request->input('parcel-id'));
 
       //$loc = Location->where('parcel_id', 1);
-        $user = DB::table('locations')->where('parcel_id', ($request->input('parcel-id')))->first();
-        echo $user->latitude."<br>";
-        echo $user->longitude;
+        $loc = DB::table('locations')->where('parcel_id', ($request->input('parcel-id')))->get();
+        //echo $user->latitude."<br>";
+       // echo $user->longitude;
 
-     // return view('parcels.location', ['locations'=>$loc]);
-        //print($request->input('parcel-id'));
+      return view('parcels.location', ['locations'=>$loc]);
 
     
 

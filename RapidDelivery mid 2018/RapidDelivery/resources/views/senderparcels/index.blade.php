@@ -90,11 +90,21 @@
       <div class="container">
         <div class="row">
           <form action="{{ route('parcel.location')}}" method="post"  name="parcel-id2">
-          <input type="text" class="form-control" id="parcel-id" value="1" name="parcel-id">
+          <input type="text" class="form-control" id="parcel-id" placeholder="Parcel ID" name="parcel-id">
             <button type="submit" class="btn btn-primary btn-track">Track your Parcel</button>
             {{csrf_field() }}
           </form>
         </div>
+         <div class="row">{{--start--}}
+          
+          <a href="#" onclick="getDelete()"> Delete</a>
+
+      <form id="delete-form" action="{{ route('parcels.destroy',['3']) }}" 
+        method="POST" style="display: none;"> <!--Link to the delete action in the controller-->
+                <input type="hidden" name="_method" value="delete">
+                {{ csrf_field() }}
+      </form> 
+        </div>{{--end--}}
       </div>
           
     </div>
@@ -104,6 +114,17 @@
          
          
 </div>
+
+    <script type="text/javascript">
+      function getDelete(){//onclick to delete the data
+     var result = confirm('Are you sure you wish to delete user: {{"Parcel name and ID here"}}');//Alert Dialog message
+                          if( result ){//If the user clicks on the delete button (onClick())
+                                  event.preventDefault();
+                                  document.getElementById('delete-form').submit();
+                          }
+                              
+    }
+    </script>
 
 <script type="text/javascript">
 // $( document ).ready(function() {
