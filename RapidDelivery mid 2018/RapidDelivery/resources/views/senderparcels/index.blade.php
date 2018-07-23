@@ -17,6 +17,7 @@
             @endforeach
         </ul>
         <a class="btn btn-lg btn-primary col-sm-offset-1" href="/parcels/create">Add a Parcel</a>
+        <hr/>
     </div>
 </div>
 <hr/>
@@ -76,8 +77,54 @@
   			@endforeach
     </tbody>
   </table>
- <a class="btn btn-lg btn-primary col-sm-offset-3" href="/senderparcels/create">Add a Parcel</a>
+
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-md-6 col-lg-6 col-sm-12">
+         <a class="btn btn-lg btn-primary col-sm-offset-3" href="/senderparcels/create">Add a Parcel</a>
+    </div><!--Right coloumn-->
+                  
+
+        
+    <div class="form-group col-md-6 col-lg-4 col-sm-12">{{--Add a track id later--}}
+      <div class="container">
+        <div class="row">
+          <form action="{{ route('parcel.location')}}" method="post"  name="parcel-id2">
+          <input type="text" class="form-control" id="parcel-id" placeholder="Parcel ID" name="parcel-id">
+            <button type="submit" class="btn btn-primary btn-track">Track your Parcel</button>
+            {{csrf_field() }}
+          </form>
+        </div>
+         <div class="row">{{--start--}}
+          
+          <a href="#" onclick="getDelete()"> Delete</a>
+
+      <form id="delete-form" action="{{ route('parcels.destroy',['3']) }}" 
+        method="POST" style="display: none;"> <!--Link to the delete action in the controller-->
+                <input type="hidden" name="_method" value="delete">
+                {{ csrf_field() }}
+      </form> 
+        </div>{{--end--}}
+      </div>
+          
+    </div>
+    </div>
+  </div><!--Right coloumn ends-->
+
+         
+         
 </div>
+
+    <script type="text/javascript">
+      function getDelete(){//onclick to delete the data
+     var result = confirm('Are you sure you wish to delete user: {{"Parcel name and ID here"}}');//Alert Dialog message
+                          if( result ){//If the user clicks on the delete button (onClick())
+                                  event.preventDefault();
+                                  document.getElementById('delete-form').submit();
+                          }
+                              
+    }
+    </script>
 
 <script type="text/javascript">
 // $( document ).ready(function() {

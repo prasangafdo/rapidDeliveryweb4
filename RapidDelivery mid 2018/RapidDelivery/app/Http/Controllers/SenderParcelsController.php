@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Parcel;
+use App\Location;
 use App\SenderParcel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SenderParcelsController extends Controller
 {
@@ -115,6 +117,34 @@ class SenderParcelsController extends Controller
     public function destroy(Parcel $parcel)
     {
         //
+    }
+    public function location(Request $request)
+    {
+       // $dd = Location::all();
+       // return view('parcels.location');
+        
+       
+     // $loc = Location::where('id', $request->input('parcel-id'));
+
+      //$loc = Location->where('parcel_id', 1);
+        $loc = DB::table('locations')->where('parcel_id', ($request->input('parcel-id')))->get();
+        //echo $user->latitude."<br>";
+       // echo $user->longitude;
+
+      return view('parcels.location', ['locations'=>$loc]);
+
+    
+
+        // $pickup = Parcel::where('id', $request->input('parcel_id'))
+        //                     ->update([
+        //                         'status'=>'picked_up'
+        //                     ]);
+        // if($pickup){
+        //     return redirect()->route('courierparcels.index')
+        //     ->with('success', 'User updated successfully');//Return message *not working.
+        // }                        
+        // return back()->withInput();
+
     }
 }
 

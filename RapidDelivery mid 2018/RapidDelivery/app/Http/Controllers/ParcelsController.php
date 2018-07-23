@@ -113,6 +113,25 @@ class ParcelsController extends Controller
     public function destroy(Parcel $parcel)
     {
         //
+        //echo "This is destroy";
+
+          $find_parcel = Parcel::find($parcel->id);
+
+          if ($find_parcel->delete()) {
+              echo "Parcel deleted";
+          }
+          else
+            echo "Something went wrong";
+
+    //     if($findStudent->delete()){
+    //         return redirect()->route('students.index')
+    //         ->with('success', 'Student Deleted Successfully');
+    //     }
+  
+    //     return back()->withInput()->with('error', 'Student could not be deleted.');
+  
+    //   return ($student);
+    // }
     }
 
     public function pickup(Request $request)
@@ -132,8 +151,5 @@ class ParcelsController extends Controller
         return back()->withInput();
 
     }
-    public function location(Request $request)
-    {
-        return view('parcels.location');
-    }
+
 }

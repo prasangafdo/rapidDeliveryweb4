@@ -30,4 +30,7 @@ Route::post('parcels/pickup', 'ParcelsController@pickup')->name('parcels.pickup'
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/location', 'ParcelsController@location');//Pass location variables
+//Route::get('senderparcels/location', 'SenderParcelsController@location')->name('senderparcels.location');//Rename this to track. Not working. So changed to location
+//Route::post('location', 'SenderParcelsController@location');//Pass location variables
+Route::post('location', 'SenderParcelsController@location')->name('parcel.location');//This is how we define a new route
+//Route::post('parcel/destroy', 'ParcelsController@destroy')->name('parcel.destroy');//Unnessersary
