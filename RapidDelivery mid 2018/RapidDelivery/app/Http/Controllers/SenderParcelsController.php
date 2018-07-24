@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\Parcel;
-use App\Location;
-use App\SenderParcel;
+use RapidDelivery\Parcel;
+use RapidDelivery\Location;
+use RapidDelivery\SenderParcel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -73,7 +73,7 @@ class SenderParcelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SenderParcel  $senderParcel
+     * @param  \RapidDelivery\SenderParcel  $senderParcel
      * @return \Illuminate\Http\Response
      */
     public function show(Parcel $parcel)
@@ -88,7 +88,7 @@ class SenderParcelsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function edit(Parcel $parcel)
@@ -100,7 +100,7 @@ class SenderParcelsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Parcel $parcel)
@@ -111,7 +111,7 @@ class SenderParcelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function destroy(Parcel $parcel)
@@ -161,7 +161,7 @@ class SenderParcelsController extends Controller
 //     /**
 //      * Show the form for editing the specified resource.
 //      *
-//      * @param  \App\SenderParcel  $senderParcel
+//      * @param  \RapidDelivery\SenderParcel  $senderParcel
 //      * @return \Illuminate\Http\Response
 //      */
 //     public function edit(SenderParcel $senderParcel)
@@ -173,7 +173,7 @@ class SenderParcelsController extends Controller
 //      * Update the specified resource in storage.
 //      *
 //      * @param  \Illuminate\Http\Request  $request
-//      * @param  \App\SenderParcel  $senderParcel
+//      * @param  \RapidDelivery\SenderParcel  $senderParcel
 //      * @return \Illuminate\Http\Response
 //      */
 //     public function update(Request $request, SenderParcel $senderParcel)
@@ -184,7 +184,7 @@ class SenderParcelsController extends Controller
 //     /**
 //      * Remove the specified resource from storage.
 //      *
-//      * @param  \App\SenderParcel  $senderParcel
+//      * @param  \RapidDelivery\SenderParcel  $senderParcel
 //      * @return \Illuminate\Http\Response
 //      */
 //     public function destroy(SenderParcel $senderParcel)

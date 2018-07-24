@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\Parcel;
-use App\SenderParcel;
+use RapidDelivery\Parcel;
+use RapidDelivery\SenderParcel;
 use Illuminate\Http\Request;
 
 class ParcelsController extends Controller
@@ -69,7 +69,7 @@ class ParcelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function show(Parcel $parcel)
@@ -84,7 +84,7 @@ class ParcelsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function edit(Parcel $parcel)
@@ -96,7 +96,7 @@ class ParcelsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Parcel $parcel)
@@ -107,7 +107,7 @@ class ParcelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Parcel  $parcel
+     * @param  \RapidDelivery\Parcel  $parcel
      * @return \Illuminate\Http\Response
      */
     public function destroy(Parcel $parcel)

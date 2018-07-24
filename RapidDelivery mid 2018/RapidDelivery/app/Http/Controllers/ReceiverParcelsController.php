@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\ReceiverParcel;
+use RapidDelivery\ReceiverParcel;
 use Illuminate\Http\Request;
 
 class ReceiverParcelsController extends Controller
@@ -41,7 +41,7 @@ class ReceiverParcelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ReceiverParcel  $receiverParcel
+     * @param  \RapidDelivery\ReceiverParcel  $receiverParcel
      * @return \Illuminate\Http\Response
      */
     public function show(ReceiverParcel $receiverParcel)
@@ -52,7 +52,7 @@ class ReceiverParcelsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ReceiverParcel  $receiverParcel
+     * @param  \RapidDelivery\ReceiverParcel  $receiverParcel
      * @return \Illuminate\Http\Response
      */
     public function edit(ReceiverParcel $receiverParcel)
@@ -64,7 +64,7 @@ class ReceiverParcelsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ReceiverParcel  $receiverParcel
+     * @param  \RapidDelivery\ReceiverParcel  $receiverParcel
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, ReceiverParcel $receiverParcel)
@@ -75,7 +75,7 @@ class ReceiverParcelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ReceiverParcel  $receiverParcel
+     * @param  \RapidDelivery\ReceiverParcel  $receiverParcel
      * @return \Illuminate\Http\Response
      */
     public function destroy(ReceiverParcel $receiverParcel)

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\ParcelUser;
+use RapidDelivery\ParcelUser;
 use Illuminate\Http\Request;
 
 class ParcelUsersController extends Controller
@@ -41,7 +41,7 @@ class ParcelUsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ParcelUser  $parcelUser
+     * @param  \RapidDelivery\ParcelUser  $parcelUser
      * @return \Illuminate\Http\Response
      */
     public function show(ParcelUser $parcelUser)
@@ -52,7 +52,7 @@ class ParcelUsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ParcelUser  $parcelUser
+     * @param  \RapidDelivery\ParcelUser  $parcelUser
      * @return \Illuminate\Http\Response
      */
     public function edit(ParcelUser $parcelUser)
@@ -64,7 +64,7 @@ class ParcelUsersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ParcelUser  $parcelUser
+     * @param  \RapidDelivery\ParcelUser  $parcelUser
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, ParcelUser $parcelUser)
@@ -75,7 +75,7 @@ class ParcelUsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ParcelUser  $parcelUser
+     * @param  \RapidDelivery\ParcelUser  $parcelUser
      * @return \Illuminate\Http\Response
      */
     public function destroy(ParcelUser $parcelUser)

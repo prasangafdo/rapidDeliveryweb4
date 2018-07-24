@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\Courier;
+use RapidDelivery\Courier;
 use Illuminate\Http\Request;
 
 class CouriersController extends Controller
@@ -42,7 +42,7 @@ class CouriersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Courier  $courier
+     * @param  \RapidDelivery\Courier  $courier
      * @return \Illuminate\Http\Response
      */
     public function show(Courier $courier)
@@ -54,7 +54,7 @@ class CouriersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Courier  $courier
+     * @param  \RapidDelivery\Courier  $courier
      * @return \Illuminate\Http\Response
      */
     public function edit(Courier $courier)
@@ -66,7 +66,7 @@ class CouriersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Courier  $courier
+     * @param  \RapidDelivery\Courier  $courier
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Courier $courier)
@@ -77,7 +77,7 @@ class CouriersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Courier  $courier
+     * @param  \RapidDelivery\Courier  $courier
      * @return \Illuminate\Http\Response
      */
     public function destroy(Courier $courier)

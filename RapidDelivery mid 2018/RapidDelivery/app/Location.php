@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace RapidDelivery;
 
 use Illuminate\Database\Eloquent\Model;
 
