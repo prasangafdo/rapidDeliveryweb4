@@ -58,25 +58,16 @@
       </div>     
     </div>
 
-<div class="form-group col-md-6 col-lg-3 col-sm-12">{{--Add a track id later--}}
-      <div class="container">
-        <div class="row">
-         <form id="delete-form" action="{{ route('parcels.destroy',['9']) }}" method="POST"> 
-          <input type="text" class="form-control" id="parcelid2" placeholder="Parcel ID" name="parcel-id">
-            <button type="submit" class="btn btn-track btn-primary btn-delete" onclick="getDelete()">Confirm Delivery</button>
-                        <input type="hidden" name="_method" value="delete">
-            {{csrf_field() }}
-          </form>
-        </div>
-      </div>     
-    </div>
 
-    
+<!-- {{ route('parcels.destroy',['9']) }} -->
+
     <script type="text/javascript">
 
  $(document).ready(function () {
    // body...
-   $('body').css('background-color', 'yellow');
+   //$('body').css('background-color', 'yellow');
+   var ddd = $('#deleteparcelid').val();
+   
  });
 
 
@@ -84,7 +75,7 @@
 </script>
   @endsection()
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
       function getDelete(){//onclick to delete the data
        // var parcel_id = getElementById(parcelid2).val ;
         console.log(parcel_id);
@@ -96,4 +87,17 @@
                               
     }
 </script>
+ -->
+ <script type="text/javascript">
+      function getDelete(){//onclick to delete the data
+      var ddd = $('#deleteparcelid').val();//Getting delete parcel id
+                $('#delete-form').attr('action', '{{ route("parcels.destroy", [$parcel->id]) }}');
 
+     var result = confirm('Are you sure you wish to delete user: ' + ddd);//Alert Dialog message
+                          if( result ){//If the user clicks on the delete button (onClick())
+                                  event.preventDefault();
+                                  document.getElementById('delete-form').submit();
+                          }                              
+    }
+    // $('#delete-form').attr('action', '{{ route("parcels.destroy",' $("#deleteparcelid").val();' ) }}');
+</script>
