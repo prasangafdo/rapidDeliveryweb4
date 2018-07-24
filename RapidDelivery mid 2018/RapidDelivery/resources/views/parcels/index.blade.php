@@ -94,6 +94,8 @@ $( document ).ready(function() {
   function pickup() {
   	window.location ="parcels.pickup";
   }
+
+  $(console.log($('');
 });
 </script>
 </html>

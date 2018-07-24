@@ -49,6 +49,19 @@
         </div>
   </div>
 
+      <!-- Delete form -->
+      <div class="form-group col-md-6 col-lg-3 col-sm-12">{{--Add a track id later--}}
+            <div class="container">
+              <div class="row">
+               <form id="delete-form" action="#" method="POST"> <!--Check how to do this with JQ-->
+                  <button type="submit" class="btn btn-track btn-primary btn-delete" onclick="getDelete()">Confirm Delivery</button>
+                              <input type="hidden" name="_method" value="delete">
+                  {{csrf_field() }}
+                </form>
+              </div>
+            </div>     
+          </div>
+
   <h1 class="col-lg-10" id="about">About</h1><!--Move this to the welcome blade-->
   <p></p>
 <!--End about-->
@@ -121,20 +134,25 @@
     <hr/>    
     <footer class="footer col-sm-7 col-sm-offset-3">
         <p style="text-align:center">© 2018 Company, Inc.</p>
-      </footer>
 
-    @endsection()
-
-    <script type="text/javascript">
+        <!-- Delete function -->
+         <script type="text/javascript">
       function getDelete(){//onclick to delete the data
-     var result = confirm('Are you sure you wish to delete user: {{$parcel}}');//Alert Dialog message
+      
+     var result = confirm('Are you sure you wish to delete user: {{$parcel->item}}');//Alert Dialog message
                           if( result ){//If the user clicks on the delete button (onClick())
                                   event.preventDefault();
                                   document.getElementById('delete-form').submit();
-                          }
-                              
-    }
-    </script>
+                          } 
+                          else {
+                            
+                          }                            
+            }
+            // $('#delete-form').attr('action', '{{ route("parcels.destroy",' $("#deleteparcelid").val();' ) }}');
+        </script>
+      </footer>
+
+    @endsection()
 
 
 
