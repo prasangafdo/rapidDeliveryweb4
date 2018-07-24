@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Rapid Delivery</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-        
+
 
         <!-- Styles -->
         <style>
@@ -81,15 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Rapid Delivery
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('senderparcels.create') }}">Add a parcel</a>
+                    <a href="{{ route('senderparcels.index') }}">View your parcels</a>
+                    <a href="{{ route('register') }}">Track</a>> 
+                    <!-- Add the location later -->
                 </div>
             </div>
         </div>
