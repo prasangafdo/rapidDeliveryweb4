@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-lg-4">
-      <p>Folowing table shows non-pickedup parcels.<br> Please select a parcel to view more details.</p>             
+      <p>Folowing table shows all the parcels in the database.<br> Please select a parcel to view more details.</p>             
       </div>
       <div class="col-md-4 col-lg-4">
       <a class="btn btn-lg btn-primary col-sm-offset-3" href="/parcels/create">Add a Parcel</a>

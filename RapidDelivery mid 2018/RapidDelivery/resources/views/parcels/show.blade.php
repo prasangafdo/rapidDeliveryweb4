@@ -12,8 +12,38 @@
       </div>
 
       <div class="jumbotron">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h1 class="text-primary">{{$parcel->item}}</h1>
+            </div>
+            
+            <!-- Delete form -->
+          <div class="form-group col-md-4 col-lg-4 col-sm-12 ">{{--Add a track id later--}}
+            <div class="container">
+              <div class="row">
+               <form id="delete-form" action="#" method="POST"> <!--Check how to do this with JQ-->
+                  <button type="submit" class="btn btn-lg btn-track btn-primary btn-delete" onclick="getDelete()">Confirm Delivery</button>
+                              <input type="hidden" name="_method" value="delete">
+                  {{csrf_field() }}
+                </form>
+              </div>
+            </div>     
+          </div>
+          <!-- Delete form ends -->
+          <!-- Track form starts -->
+          <div class="form-group col-md-4 col-lg-4 col-sm-12 ">
+             <form action="{{ route('parcel.location')}}" method="post"  name="parcel-id2">
+                <input type="hidden" class="form-control" id="parcel-id" placeholder="Parcel ID" name="parcel-id" value="{{$parcel->id}}">
+                  <button type="submit" class="btn btn-lg btn-primary btn-track">Track this Parcel</button>
+                  {{csrf_field() }}
+              </form>
+          </div>
+          <!-- Track form ends -->
+          </div>
+        </div>
 
-      <h1 class="text-danger">{{$parcel->item}}</h1>
+      
 
       </div>
 
@@ -49,18 +79,7 @@
         </div>
   </div>
 
-      <!-- Delete form -->
-      <div class="form-group col-md-6 col-lg-3 col-sm-12">{{--Add a track id later--}}
-            <div class="container">
-              <div class="row">
-               <form id="delete-form" action="#" method="POST"> <!--Check how to do this with JQ-->
-                  <button type="submit" class="btn btn-track btn-primary btn-delete" onclick="getDelete()">Confirm Delivery</button>
-                              <input type="hidden" name="_method" value="delete">
-                  {{csrf_field() }}
-                </form>
-              </div>
-            </div>     
-          </div>
+
 
   <h1 class="col-lg-10" id="about">About</h1><!--Move this to the welcome blade-->
   <p></p>
@@ -84,19 +103,6 @@
 <!--Delete code copied from "daveozoalor's github"-->
 
 <li>            
-   {{--  <!--Original code without a function-->
-   <!--   <a   
-      href="#"
-          onclick="
-          var result = confirm('Are you sure you wish to delete user: {{$student->name}}');//Alert Dialog message
-              if( result ){//If the user clicks on the delete button (onClick())
-                      event.preventDefault();
-                      document.getElementById('delete-form').submit();
-              }
-                  "
-                  >
-          Delete
-      </a>-->  --}}
 
       {{--  <!--Improved code with a function-->  --}}
       <a href="#" onclick="getDelete()"> Delete</a>
@@ -145,7 +151,7 @@
                                   document.getElementById('delete-form').submit();
                           } 
                           else {
-                            
+
                           }                            
             }
             // $('#delete-form').attr('action', '{{ route("parcels.destroy",' $("#deleteparcelid").val();' ) }}');

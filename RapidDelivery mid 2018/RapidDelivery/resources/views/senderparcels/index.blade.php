@@ -1,10 +1,20 @@
 @extends('layouts/app')
 @section('content')
-    <script src="{{ asset('../js/jquery-3.3.1.js') }}"></script>
+
 <div class="container">
   <h2>Parcels</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-lg-4">
+      <p>Folowing table shows all the parcels in the database.<br> Please select a parcel to view more details.</p>             
+      </div>
+      <div class="col-md-4 col-lg-4">
+      <a class="btn btn-lg btn-primary col-sm-offset-3" href="/parcels/create">Add a Parcel</a>
+        
+      </div>
+    </div>
+  </div>
 
-  <p>Folowing table shows non-pickedup parcels.<br> Please select a parcel to view more details.</p>             
   <table class="table table-hover">
     <thead>
       <tr>
@@ -38,26 +48,15 @@
   </table>
 
 
-  <div class="container">
-    <div class="row">
-      <div class="form-group col-md-6 col-lg-3 col-sm-12">
-         <a class="btn btn-lg btn-primary col-sm-offset-3" href="/senderparcels/create">Add a Parcel</a>
-    </div><!--Right coloumn-->
-                  
 
-        
-    <div class="form-group col-md-6 col-lg-3 col-sm-12">{{--Add a track id later--}}
+ <!--    <div class="form-group col-md-6 col-lg-3 col-sm-12">{{--Add a track id later--}}
       <div class="container">
         <div class="row">
-          <form action="{{ route('parcel.location')}}" method="post"  name="parcel-id2">
-          <input type="text" class="form-control" id="parcel-id" placeholder="Parcel ID" name="parcel-id">
-            <button type="submit" class="btn btn-primary btn-track">Track your Parcel</button>
-            {{csrf_field() }}
-          </form>
+         
         </div>
       </div>     
     </div>
-
+ -->
 
 <!-- {{ route('parcels.destroy',['9']) }} -->
 
