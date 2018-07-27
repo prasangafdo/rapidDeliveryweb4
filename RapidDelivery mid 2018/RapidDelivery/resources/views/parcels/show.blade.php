@@ -14,12 +14,12 @@
       <div class="jumbotron">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
               <h1 class="text-primary">{{$parcel->item}}</h1>
             </div>
             
             <!-- Delete form -->
-          <div class="form-group col-md-4 col-lg-4 col-sm-12 ">{{--Add a track id later--}}
+          <div class="form-group col-md-3 col-lg-3 col-sm-12 ">{{--Add a track id later--}}
             <div class="container">
               <div class="row">
                <form id="delete-form" action="#" method="POST"> <!--Check how to do this with JQ-->
@@ -32,7 +32,7 @@
           </div>
           <!-- Delete form ends -->
           <!-- Track form starts -->
-          <div class="form-group col-md-4 col-lg-4 col-sm-12 ">
+          <div class="form-group col-md-3 col-lg-3 col-sm-12 ">
              <form action="{{ route('parcel.location')}}" method="post"  name="parcel-id2">
                 <input type="hidden" class="form-control" id="parcel-id" placeholder="Parcel ID" name="parcel-id" value="{{$parcel->id}}">
                   <button type="submit" class="btn btn-lg btn-primary btn-track">Track this Parcel</button>

@@ -56,7 +56,7 @@ class ParcelsController extends Controller
                 'parcel_id'=>$parcel->id,             
             ]);
 
-            if($parcel_sender){
+            if($parcel_sender){//Add $parcel to condition and check as well
                 return redirect()->route('parcels.show', ['parcel'=>$parcel->id])
                 ->with('success', 'Parcel added successfully');
            // }
