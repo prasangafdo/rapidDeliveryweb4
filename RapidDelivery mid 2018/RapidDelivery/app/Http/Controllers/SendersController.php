@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\Sender;
+use RapidDelivery\Sender;
 use Illuminate\Http\Request;
 
 class SendersController extends Controller
@@ -43,7 +43,7 @@ class SendersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sender  $sender
+     * @param  \RapidDelivery\Sender  $sender
      * @return \Illuminate\Http\Response
      */
     public function show(Sender $sender)
@@ -55,7 +55,7 @@ class SendersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sender  $sender
+     * @param  \RapidDelivery\Sender  $sender
      * @return \Illuminate\Http\Response
      */
     public function edit(Sender $sender)
@@ -67,7 +67,7 @@ class SendersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sender  $sender
+     * @param  \RapidDelivery\Sender  $sender
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sender $sender)
@@ -78,7 +78,7 @@ class SendersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sender  $sender
+     * @param  \RapidDelivery\Sender  $sender
      * @return \Illuminate\Http\Response
      */
     public function destroy(Sender $sender)

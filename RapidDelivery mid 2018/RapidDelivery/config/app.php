@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Rapid Delivery'),
 
     /*
     |--------------------------------------------------------------------------
@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        RapidDelivery\Providers\AppServiceProvider::class,
+        RapidDelivery\Providers\AuthServiceProvider::class,
+        // RapidDelivery\Providers\BroadcastServiceProvider::class,
+        RapidDelivery\Providers\EventServiceProvider::class,
+        RapidDelivery\Providers\RouteServiceProvider::class,
 
     ],
 

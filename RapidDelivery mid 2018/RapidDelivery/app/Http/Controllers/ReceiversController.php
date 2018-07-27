@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RapidDelivery\Http\Controllers;
 
-use App\Receiver;
+use RapidDelivery\Receiver;
 use Illuminate\Http\Request;
 
 class ReceiversController extends Controller
@@ -41,7 +41,7 @@ class ReceiversController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Receiver  $receiver
+     * @param  \RapidDelivery\Receiver  $receiver
      * @return \Illuminate\Http\Response
      */
     public function show(Receiver $receiver)
@@ -52,7 +52,7 @@ class ReceiversController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Receiver  $receiver
+     * @param  \RapidDelivery\Receiver  $receiver
      * @return \Illuminate\Http\Response
      */
     public function edit(Receiver $receiver)
@@ -64,7 +64,7 @@ class ReceiversController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Receiver  $receiver
+     * @param  \RapidDelivery\Receiver  $receiver
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Receiver $receiver)
@@ -75,7 +75,7 @@ class ReceiversController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Receiver  $receiver
+     * @param  \RapidDelivery\Receiver  $receiver
      * @return \Illuminate\Http\Response
      */
     public function destroy(Receiver $receiver)
